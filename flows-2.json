@@ -1,0 +1,528 @@
+[
+    {
+        "id": "f080e1d036a641fe",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "d9e4096d0e2d0153",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "8696d4a9c2580d88",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7e101c06a77c6b04",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "6c0379eeec253575",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "8696d4a9c2580d88",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "baef11ab9e78b965",
+        "type": "mqtt in",
+        "z": "f080e1d036a641fe",
+        "name": "",
+        "topic": "home/livingroom/#",
+        "qos": "1",
+        "datatype": "auto-detect",
+        "broker": "d9e4096d0e2d0153",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 540,
+        "wires": [
+            [
+                "49c68fd9e61187cd"
+            ]
+        ]
+    },
+    {
+        "id": "896a53a31f739a4e",
+        "type": "mqtt out",
+        "z": "f080e1d036a641fe",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d9e4096d0e2d0153",
+        "x": 510,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "237d96925248eef7",
+        "type": "inject",
+        "z": "f080e1d036a641fe",
+        "name": "temperature",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 120,
+        "wires": [
+            [
+                "5bc972447d626a26"
+            ]
+        ]
+    },
+    {
+        "id": "45738dd15da8f99f",
+        "type": "debug",
+        "z": "f080e1d036a641fe",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "5bc972447d626a26",
+        "type": "function",
+        "z": "f080e1d036a641fe",
+        "name": "function 1",
+        "func": "msg.topic = \"home/livingroom/temperature\";\nmsg.payload = (20 + Math.random() * 10).toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 120,
+        "wires": [
+            [
+                "896a53a31f739a4e"
+            ]
+        ]
+    },
+    {
+        "id": "dd2b5fb0ed4ef195",
+        "type": "inject",
+        "z": "f080e1d036a641fe",
+        "name": "humidity",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 140,
+        "y": 180,
+        "wires": [
+            [
+                "4cd26e5a6cbed810"
+            ]
+        ]
+    },
+    {
+        "id": "4cd26e5a6cbed810",
+        "type": "function",
+        "z": "f080e1d036a641fe",
+        "name": "function 2",
+        "func": "msg.topic = \"home/livingroom/humidity\";\nmsg.payload = (40 + Math.random() * 20).toFixed(2);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 180,
+        "wires": [
+            [
+                "954ee296ecf532c2"
+            ]
+        ]
+    },
+    {
+        "id": "c84559037a3b7c80",
+        "type": "inject",
+        "z": "f080e1d036a641fe",
+        "name": "status",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 240,
+        "wires": [
+            [
+                "3e8564caeb5535d6"
+            ]
+        ]
+    },
+    {
+        "id": "3e8564caeb5535d6",
+        "type": "function",
+        "z": "f080e1d036a641fe",
+        "name": "function 3",
+        "func": "msg.topic = \"home/livingroom/status\";\nmsg.payload = \"System Active\";\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 240,
+        "wires": [
+            [
+                "d9e9d73fd55c9aaf"
+            ]
+        ]
+    },
+    {
+        "id": "d9e9d73fd55c9aaf",
+        "type": "mqtt out",
+        "z": "f080e1d036a641fe",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d9e4096d0e2d0153",
+        "x": 490,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "954ee296ecf532c2",
+        "type": "mqtt out",
+        "z": "f080e1d036a641fe",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d9e4096d0e2d0153",
+        "x": 490,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e9d1b7ea61af15fe",
+        "type": "ui_gauge",
+        "z": "f080e1d036a641fe",
+        "name": "",
+        "group": "6c0379eeec253575",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "C",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 490,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "e42816ae97ccc974",
+        "type": "ui_gauge",
+        "z": "f080e1d036a641fe",
+        "name": "",
+        "group": "6c0379eeec253575",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 500,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "ae780e898d8d5b91",
+        "type": "ui_text",
+        "z": "f080e1d036a641fe",
+        "group": "6c0379eeec253575",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 430,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "49c68fd9e61187cd",
+        "type": "switch",
+        "z": "f080e1d036a641fe",
+        "name": "",
+        "property": "topic",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "home/livingroom/temperature",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "home/livingroom/humidity",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "home/livingroom/status",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 250,
+        "y": 540,
+        "wires": [
+            [
+                "e9d1b7ea61af15fe"
+            ],
+            [
+                "e42816ae97ccc974"
+            ],
+            [
+                "ae780e898d8d5b91"
+            ],
+            [
+                "45738dd15da8f99f"
+            ]
+        ]
+    },
+    {
+        "id": "a32e323c2ba79972",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6"
+        }
+    }
+]
